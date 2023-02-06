@@ -9,24 +9,24 @@ export const AnimeList = () => {
 
   
   useEffect(() => {
-    // fetch(`https://api.jikan.moe/v4/anime?q=${search}`)
-    // .then(response => response.json())
-    // .then(res => {
-    //     const { data } = res
+    fetch(`https://api.jikan.moe/v4/anime?q=${search}`)
+    .then(response => response.json())
+    .then(res => {
+        const { data } = res
 
-    //     const animes = data.map(img => ({
-    //         id: img.mal_id,
-    //         title: img.title,
-    //         img: img.images.jpg.image_url,
-    //         url: img.url
+        const animes = data.map(img => ({
+            id: img.mal_id,
+            title: img.title,
+            img: img.images.jpg.image_url,
+            url: img.url
 
-    //     }))
+        }))
         
-    //     setAnime(animes)
-    //     setIsLoading(false)
-    //   })
+        setAnime(animes)
+        setIsLoading(false)
+      })
     
-      getAnimes()
+      // getAnimes()
 
 
     }, [anime])
