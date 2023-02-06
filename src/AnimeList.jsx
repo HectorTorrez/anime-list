@@ -6,8 +6,8 @@ import { Form } from "./components/Form";
 export const AnimeList = () => {
   const [anime, setAnime] = useState([]);
   const [search, setSearch] = useState('')
-  
   const [isLoading, setIsLoading] = useState(true)
+  
 
 
   
@@ -46,20 +46,19 @@ export const AnimeList = () => {
         id: search.id + 1,
         title: search.title
       }]) 
-      isLoading(false)
     }
   
   return (
     <div className="app">
       
-      <h1>AnimeList</h1>
+      <h1 className="title-AnimeList">AnimeList</h1>
       <Form onSubmit={onSubmit} onChange={onChange} search={search}/>
-      {isLoading && <p>...Loading</p>}
-      {anime.length === 0 ? <p>No hay nada</p> : ''}
+      {isLoading && <p className="loading">Loading...</p>}
+      {anime.length === 0 ? <p className="nothing">Nothing...</p> : ''}
       <div className="body-card">  
         {
           anime.map( anm => (
-           <Card anm={anm} isLoading={isLoading}/>
+           <Card key={anm.id} anm={anm} isLoading={isLoading}/>
             
           ))
         }

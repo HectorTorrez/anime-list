@@ -1,16 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import './index.css'
-import { getRoutes } from './routes/getRoutes';
+import { AnimeList } from './AnimeList';
 
-const router = getRoutes();
+import './index.css'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+     <AnimeList/>
   </React.StrictMode>,
 )

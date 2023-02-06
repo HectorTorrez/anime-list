@@ -11,6 +11,8 @@ html{
 }
 body{
     width: 100%;
+    background-color: #030303de;
+    color: white;
 }
 
 .none{
@@ -22,9 +24,10 @@ body{
     flex-direction: column;
     align-items: center;
 }
+
 .body-card{
-    width: 80%;
-    margin: 0 auto;
+    
+    margin: 10px;
 }
 .form{
     margin-top: 10px;
@@ -41,37 +44,43 @@ body{
 }
 .btn-search{
     padding: 5px;
-    outline: none;
-    border: 1px solid blue;
+    outline: none;  
     border-radius: 10px;
-    background-color: rgb(255, 255, 255);
-    color: blue;
+    border: 2px solid transparent;
+    background-color: #030303de;
+    color: white;
+    font-size: 2.0rem;
+    font-weight: bold;
     transition: 1s;
 }
 .btn-search:hover{
-    background-color: blue;
-    color: white;
-
+    border: 2px solid white;
 }
 
 .card{
     display: block;
-    max-width: 300px;
+    max-width: 250px;
     width: 100%;
     margin: 0 auto;
-    margin-bottom: 10px;
-    padding: 20px;
-    border: 1px solid black;
     border-radius: 20px;
+    box-shadow: 0px 0px 0px 5px rgba(148, 145, 145, 0.11);
+    cursor: pointer;
 }
 .card-body{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: black;
+    height: 100%;
+    padding: 20px;
+
+    color: white;
+}
+.card:hover{
+    box-shadow: 0px 0px 0px 5px rgb(255, 251, 0);
 }
 .card-title{
+    margin-bottom: 25px;
     font-size: 2.5rem;
     text-align: center;
 }
@@ -86,16 +95,46 @@ body{
     font-size: 1.3rem;
     word-wrap: break-word;
 }
+.nothing{
+    margin-top: 30px;
+    font-size: 6.0rem;
+    font-weight: bold;
+}
+.loading{
+    margin-top: 30px;
+    font-size: 6.0rem;
+    font-weight: bold;
+}
 
 @media (min-width: 689px ){
+
+    .form-input{
+       width: 500px;
+       height: 40px;
+       font-size: 2.0rem;
+    }
+    .btn-search{
+        width: 100px;
+        height: 40px;
+
+    }
     .body-card{
         display: flex;
         flex-wrap: wrap;
-        gap: 5px;
-        width: 80%;
-        margin: 0 auto;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+    }
+    .title-AnimeList{
+        
+        margin-left: 40px;
+        font-size: 3.0rem;
+        align-self: self-start;
     }
     .card{
         margin: 0;
+        margin-bottom: 20px;
+
     }
+    
 } 
