@@ -13,9 +13,9 @@ export const getAnimes = () => {
             }))
 
             console.log(animes)
-            return {
+            return [
                 animes
-            }
+            ]
 
         })
 

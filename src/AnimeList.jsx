@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-import { Navbar } from "./components/Navbar"
-import { getAnimes } from "./data/getAnimes";
+import { Card } from "./components/Card";
+import { Form } from "./components/Form";
+
+
 export const AnimeList = () => {
   const [anime, setAnime] = useState([]);
   const [search, setSearch] = useState('')
+  
   const [isLoading, setIsLoading] = useState(true)
 
 
@@ -26,8 +29,8 @@ export const AnimeList = () => {
         setIsLoading(false)
       })
     
-      // getAnimes()
-
+      
+      // setAnime(animes)
 
     }, [anime])
     
@@ -43,34 +46,25 @@ export const AnimeList = () => {
         id: search.id + 1,
         title: search.title
       }]) 
+      isLoading(false)
     }
   
   return (
-    <>
-    <Navbar/>
+    <div className="app">
       
-      <h2>AnimeList</h2>
-      <form onSubmit={onSubmit}>
-        <input type="text" onChange={onChange} value={search} />
-        <button>Search</button>
-      </form>
-
+      <h1>AnimeList</h1>
+      <Form onSubmit={onSubmit} onChange={onChange} search={search}/>
       {isLoading && <p>...Loading</p>}
       {anime.length === 0 ? <p>No hay nada</p> : ''}
-      <div>  
+      <div className="body-card">  
         {
           anime.map( anm => (
-            
-            <div key={anm.id}>
-              <h1>{anm.title}</h1>
-              <img src={anm.img} alt="" />
-              <p>{anm.url}</p>
-            </div>
+           <Card anm={anm} isLoading={isLoading}/>
             
           ))
         }
       </div>
-    </>
+    </div>
 
   )
 }

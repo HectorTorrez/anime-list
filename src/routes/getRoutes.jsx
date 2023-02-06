@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { AnimeList } from "../AnimeList";
 import ErrorPage from "../components/ErrorPage";
-import { Search } from "../components/Search";
 
 export const getRoutes = () => createBrowserRouter([
     {
@@ -9,10 +8,6 @@ export const getRoutes = () => createBrowserRouter([
       element:  <AnimeList/>, 
       errorElement: <ErrorPage/>
     
-    },
-    {
-        path: 'search',
-        element: <Search/>
     },
     {
       path:"/*",
