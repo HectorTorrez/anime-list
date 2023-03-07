@@ -1,3 +1,2 @@
 # anime-list
-Consumiendo la API de `https://api.jikan.moe/v4/anime` logre hacer un catalo de animes.
-En esta pagina puedes buscar el anime que mas te guste y ver su puntuacion en `https://myanimelist.net/`
+This project starts with the idea of creating a web application to manage a list of anime. The application is created with React and uses the Jikan API `https://api.jikan.moe/v4/anime` to obtain information of the anime. On this page, you can search for the anime that you like the most and see its score in `https://myanimelist.net/`
